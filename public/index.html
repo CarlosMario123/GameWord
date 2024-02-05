@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="index.css">
+     <link rel="stylesheet" href="./personalizado.css">
+     <!--Para el cliente socket-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js" integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="flex flex-col items-center h-screen bg-blue-600">
+
+     <h1 class="w-full py-4 font-mono text-4xl font-semibold text-center text-white ">Game word friends</h1>
+
+     <div class="bg-slate-200 w-11/12 h-[35rem] mt-8 rounded-lg flex flex-col items-center px-2 py-4">
+       
+          <div class="flex items-center justify-center gap-x-2">
+             <input type="text" placeholder="Codigo de sala" class="py-2 mt-2 text-center" id="nameRoom"> <button class="w-16 py-2 text-white bg-blue-400 rounded-md" id="unirse">Unirse</button>
+          </div>
+
+          <div class="flex">
+           <button class="w-64 py-2 mt-4 text-white bg-green-600 rounded-md" id="jugar">Jugar</button>
+          </div>
+
+
+          <div class="flex flex-col w-11/12 mt-6 opacity-0" id="juego">
+               <h2 class="w-full py-1 font-black text-center bg-slate-400">Jugando</h2>
+                <p class="w-full py-1 mt-2 text-center bg-blue-400" id="pregunta"></p>
+                <div class="flex flex-col w-full mt-4 gap-y-4">
+                    <button id="btn1" class="py-2 font-semibold bg-slate-300">Respuesta 1</button>
+                    <button id="btn2" class="py-2 font-semibold bg-slate-300" >Respuesta 2</button>
+                    <button id="btn3" class="py-2 font-semibold bg-slate-300">Respuesta 3</button>
+                </div>
+               
+          </div>
+          <div id="resultado">
+              
+          </div>
+         
+          <div  class="absolute flex flex-col items-center hidden bg-white rounded-sm h-96 w-96 top-15" id="tablaResult">
+               <div id="resultadoLista" class="text-yellow-500 "></div> 
+
+               <button class="px-1 py-1 mt-4 text-white bg-blue-700" id="reiniciarBtn">Reiniciar Juego</button>
+          </div>
+
+          <div class="px-4 py-1 mt-3 text-white bg-yellow-700 rounded-sm" id="myId">
+               
+          </div>
+     </div>
+
+
+
+     <script src="./script.js" type="module" ></script>
+</body>
+</html>
