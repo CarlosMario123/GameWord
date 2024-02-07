@@ -1,5 +1,5 @@
 import { findErrorInput } from "./validarErrores/Errores.js";
-const socket = io("http://localhost:8000");
+const socket = io("https://gameword2.onrender.com");
 
 const nameSala = document.getElementById("nameRoom");
 const unirse = document.getElementById("unirse");
