@@ -1,5 +1,7 @@
 import { findErrorInput } from "./validarErrores/Errores.js";
-const socket = io("http://localhost:8000");
+const domain = window.location.origin;
+console.log(domain)
+const socket = io(domain);
 
 const nameSala = document.getElementById("nameRoom");
 const unirse = document.getElementById("unirse");
