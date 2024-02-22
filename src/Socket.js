@@ -135,6 +135,12 @@ class Socket {
     }
   }
 
+  deleteUser(){
+    io.sockets.clients(someRoom).forEach(function(s){
+      s.leave(someRoom);
+  });
+  }
+
   //en metodo ira logica de contestar la preguntas
   contestando(socket, data) {
     //buscamos el usuario por su id
@@ -153,13 +159,11 @@ class Socket {
          //Emitiremos el ganador a todos los participantes
          this.io.to(socket.room).emit("winner",gestor.tablePosition(this.rooms[socket.room]));
        // Eliminar la sala del conjunto
-        this.rooms.delete(socket.room);
+        delete this.rooms[socket.room];
+        this.deleteUser()
       }
-       
-
        return
     }
-
     
     //verificamos si la respuesta es correcta
     if(pregunta.respuestaCorrecta == data){

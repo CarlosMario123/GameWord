@@ -10,7 +10,9 @@ const app = express();
 const port = 8000;
 const server = http.createServer(app);
 const io = socketio(server, {
-   cors: "*"
+   cors: {
+      origin:"localhost:8000"
+   }
 });
 
 const socket = new Socket(io);
