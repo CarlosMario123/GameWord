@@ -11,7 +11,7 @@ const port = 8000;
 const server = http.createServer(app);
 const io = socketio(server, {
    cors: {
-      origin:"localhost:8000"
+      origin:"*"
    }
 });
 
